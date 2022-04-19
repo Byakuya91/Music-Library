@@ -7,7 +7,13 @@ function App() {
   // state variables for the array of songs
   const [songs, setSongs] = useState([]);
   // create an UseEffect to activate the request
-  console.log("songs array is", songs);
+  // console.log("songs array is", songs);
+
+  // create a function to add the songs to the display
+  function addNewSong(song) {
+    let tempSongs = [...songs, song];
+    setSongs(tempSongs);
+  }
 
   useEffect(() => {
     makeGetRequest();
@@ -28,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <SongTable />
+      <SongTable ParentSongEntires={songs} />
     </div>
   );
 }

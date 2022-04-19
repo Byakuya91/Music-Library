@@ -4,7 +4,6 @@ const SongTable = (props) => {
       <table>
           <thead>
             <tr>
-               <th>id</th> 
                <th>title</th> 
                <th>album</th> 
                <th>artist</th> 
@@ -13,9 +12,19 @@ const SongTable = (props) => {
             </tr>
           </thead>
           <tbody>
-              <tr>
-                  
-              </tr>
+              {props.ParentSongEntires.map((song)=>{
+                  return(
+                   <tr>
+                       {/* {console.log(song)} */}
+                     <td>{song.title}</td>  
+                     <td>{song.album}</td>  
+                     <td>{song.artist}</td>  
+                     <td>{song.genre}</td>  
+                     <td>{song.releaseDate}</td>  
+                   </tr>
+
+                  );
+              })}
           </tbody>
       </table>
 
