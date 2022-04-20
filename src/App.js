@@ -8,7 +8,7 @@ function App() {
   // state variables for the array of songs
   const [songs, setSongs] = useState([]);
   // create an UseEffect to activate the request
-  // console.log("songs array is", songs);
+  console.log("songs array is", songs);
 
   // create a function to add the songs to the SongTable Component
   function addNewSong(song) {
