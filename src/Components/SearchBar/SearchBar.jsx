@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import SongTable from '../SongTable/SongTable';
 
 // TODO: Create the search Bar and button  DONE 
-//  TODO:  Get the search Bar to take input 
-// TODO: get the component to filter based on typed entry
-// TODO: figure out a way to update the table and filter the results.  
-// TODO: Figure out how to take into consideration type of input
+// TODO: Import the JSON data to this component. 
+// TODO: examine the JSON file 
+// TODO: figure out how to filter the JSON file based on search input
+// TODO: Account for no input added
+// TODO: Display that information(Use SongTable Component)
 
 const SearchBar = (props) => {
-    // created a state variable to update the search Term 
-    const [searchTerm, setSearchTerm] = useState("");
+    
+
     return (  
      <div className="song-bar-search">
           {/* An input box to hold the text and information */}
-         <input type = "text" placeholder='Please enter your search..' onChange={(event)=> {
-             setSearchTerm(event.target.value)
-         }} ></input>
+         <input type = "text" placeholder='Please enter your search..' onChange={(event) => props.handleSearch(event.target.value)}  ></input>
          {/* Test code for a button. MAY ABANDON */}
          {/* <button type = "submit"  onClick={(event) => {searchTerm(event.target.value)}}  >Click to search</button> */}
          

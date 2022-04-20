@@ -12,7 +12,7 @@ const SongTable = (props) => {
             </tr>
           </thead>
           <tbody>
-              {props.ParentSongEntires.map((song)=>{
+              {props.parentSongEntires.map((song)=>{
                   return(
                    <tr>
                        {/* {console.log(song)} */}

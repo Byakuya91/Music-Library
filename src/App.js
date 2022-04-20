@@ -8,14 +8,19 @@ function App() {
   // state variables for the array of songs
   const [songs, setSongs] = useState([]);
   // create an UseEffect to activate the request
-  console.log("songs array is", songs);
+  // console.log("songs array is", songs);
+
+  // a way to update the search
+  const [searchTerm, setSearchTerm] = useState("");
+
+  console.log(searchTerm);
 
   // create a function to add the songs to the SongTable Component
   function addNewSong(song) {
     let tempSongs = [...songs, song];
     setSongs(tempSongs);
   }
-
+  // intiating the API call
   useEffect(() => {
     makeGetRequest();
   }, []);
@@ -35,9 +40,9 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar handleSearch={setSearchTerm} />
       {/* Displaying the songs in the SongTable Component  */}
-      <SongTable ParentSongEntires={songs} />
+      <SongTable parentSongEntires={songs} />
     </div>
   );
 }
