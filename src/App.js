@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import SongTable from "./Components/SongTable/SongTable";
+import SearchBar from "./Components/SearchBar/SearchBar";
 
 function App() {
   // state variables for the array of songs
@@ -9,7 +10,7 @@ function App() {
   // create an UseEffect to activate the request
   // console.log("songs array is", songs);
 
-  // create a function to add the songs to the display
+  // create a function to add the songs to the SongTable Component
   function addNewSong(song) {
     let tempSongs = [...songs, song];
     setSongs(tempSongs);
@@ -18,7 +19,7 @@ function App() {
   useEffect(() => {
     makeGetRequest();
   }, []);
-
+  // retrieving API data
   async function makeGetRequest() {
     try {
       let response = await axios.get(
@@ -34,6 +35,8 @@ function App() {
 
   return (
     <div className="App">
+      <SearchBar />
+      {/* Displaying the songs in the SongTable Component  */}
       <SongTable ParentSongEntires={songs} />
     </div>
   );
