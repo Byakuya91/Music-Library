@@ -19,10 +19,9 @@ const SongTable = ({parentSongEntires, searchTerm}) => {
                 song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 song.genre.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
-              ).map((song)=>{
+              ).map((song,index)=>{
                   return(
-                   <tr>
-                       {/* {console.log(song)} */}
+                   <tr key={index}>
                      <td>{song.title}</td>  
                      <td>{song.album}</td>  
                      <td>{song.artist}</td>  

@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import SongTable from "./Components/SongTable/SongTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
+import NavBar from "./Components/NavBar/NavBar";
+import "./Components/App.css";
 
 function App() {
   // state variables for the array of songs
@@ -21,6 +23,8 @@ function App() {
     let tempSongs = [...songs, song];
     setSongs(tempSongs);
   }
+
+  // TODO: shift the code for the table inside this to do function.
   // intiating the API call
   useEffect(() => {
     makeGetRequest();
@@ -41,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <SearchBar handleSearch={setSearchTerm} />
       {/* Displaying the songs in the SongTable Component  */}
       <SongTable parentSongEntires={songs} searchTerm={searchTerm} />
