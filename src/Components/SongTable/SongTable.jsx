@@ -1,8 +1,8 @@
 const SongTable = ({parentSongEntires, searchTerm}) => {
     return ( 
       // create our display table
-      <table  className="table table-dark">
-          <thead >
+      <table  className="table table-dark ">
+          <thead className="table-font" >
             <tr>
                <th>title</th> 
                <th>album</th> 
@@ -11,7 +11,7 @@ const SongTable = ({parentSongEntires, searchTerm}) => {
                <th>releaseDate</th> 
             </tr>
           </thead>
-          <tbody>
+          <tbody className="table-font">
               {parentSongEntires.filter(
                 (song) =>
                 song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
