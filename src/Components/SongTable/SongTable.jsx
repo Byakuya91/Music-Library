@@ -1,7 +1,7 @@
-const SongTable = (props) => {
+const SongTable = ({parentSongEntires, searchTerm}) => {
     return ( 
       // create our display table
-      <table>
+      <table className="table">
           <thead>
             <tr>
                <th>title</th> 
@@ -12,7 +12,14 @@ const SongTable = (props) => {
             </tr>
           </thead>
           <tbody>
-              {props.parentSongEntires.map((song)=>{
+              {parentSongEntires.filter(
+                (song) =>
+                song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                song.album.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                song.genre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
+              ).map((song)=>{
                   return(
                    <tr>
                        {/* {console.log(song)} */}

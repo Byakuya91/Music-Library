@@ -13,24 +13,8 @@ function App() {
   // a way to update the search
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(searchTerm);
-  // create a function that filters based on the searchTerm
-  // keys of all the search criteria
-  const song_keys = ["title", "artist", "album", "genre", "releaseDate"];
-
-  // testing keys for preparation
-  console.log("the song object album is", songs[0]["album"]);
-
-  //  TEST CODE. May utilize or discard it.
-  // function getFilteredSearchResult() {
-  //   if (searchTerm != "") {
-  //     let searchResult = songs.filter((song) =>
-  //       song.title.includes(searchTerm)
-  //     );
-  //     console.log(searchResult);
-  //     setSearchTerm(searchResult);
-  //   }
-  // }
+  // an array holding the search results when filtered
+  // const [searchResults, setSearchResults] = useState([]);
 
   // create a function to add the songs to the SongTable Component
   function addNewSong(song) {
@@ -59,7 +43,7 @@ function App() {
     <div className="App">
       <SearchBar handleSearch={setSearchTerm} />
       {/* Displaying the songs in the SongTable Component  */}
-      <SongTable parentSongEntires={songs} />
+      <SongTable parentSongEntires={songs} searchTerm={searchTerm} />
     </div>
   );
 }
