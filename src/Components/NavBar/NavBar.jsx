@@ -4,7 +4,7 @@ const NavBar = (props) => {
         <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <label className="navbar-brand" style={{"textAlign":"center"}}  >Music Library</label>
+            <label className="navbar-brand" style={{"textAlign":"center", "font-size":"4rem"}}  >Music Library</label>
           </div>
         </div>
       </nav>

@@ -14,7 +14,7 @@ const SearchBar = (props) => {
     return (  
      <div className="song-bar-search">
           {/* An input box to hold the text and information */}
-         <input type = "text" placeholder='Please enter your search..' onChange={(event) => props.handleSearch(event.target.value)}  ></input>
+         <input type = "text" className='searchBar-positon-and-size  searchBar-interior searchBar-change' placeholder='Please enter your search...' onChange={(event) => props.handleSearch(event.target.value)}  ></input>
          {/* Test code for a button. MAY ABANDON */}
          {/* <button type = "submit"  onClick={(event) => {searchTerm(event.target.value)}}  >Click to search</button> */}
          

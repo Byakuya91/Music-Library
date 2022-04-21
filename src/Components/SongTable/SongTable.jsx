@@ -1,8 +1,8 @@
 const SongTable = ({parentSongEntires, searchTerm}) => {
     return ( 
       // create our display table
-      <table className="table">
-          <thead>
+      <table  className="table table-dark">
+          <thead >
             <tr>
                <th>title</th> 
                <th>album</th> 
