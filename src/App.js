@@ -9,14 +9,9 @@ import "./Components/App.css";
 function App() {
   // state variables for the array of songs
   const [songs, setSongs] = useState([]);
-  // create an UseEffect to activate the request
-  // console.log("songs array is", songs);
 
   // a way to update the search
   const [searchTerm, setSearchTerm] = useState("");
-
-  // an array holding the search results when filtered
-  // const [searchResults, setSearchResults] = useState([]);
 
   // create a function to add the songs to the SongTable Component
   function addNewSong(song) {
@@ -42,15 +37,12 @@ function App() {
       console.log(err.message);
     }
   }
-
   return (
     <div className="App">
       <NavBar />
       <SearchBar handleSearch={setSearchTerm} />
-      {/* Displaying the songs in the SongTable Component  */}
       <SongTable parentSongEntires={songs} searchTerm={searchTerm} />
     </div>
   );
 }
-
 export default App;

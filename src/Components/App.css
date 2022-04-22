@@ -1,5 +1,3 @@
-/* All styles for tables and Search Bar as well as the text for the table.  */
-
 /* SearchBar styling */
 .searchBar-positon-and-size{
     /* Positoning of the search bar on the page  */
@@ -18,14 +16,13 @@
     font-size: 15px;
     font-weight: 500; 
 }
-
 .searchBar-change:hover{
     background-color: white;
+   
 }
-
 /* Table styling */
-
 .table-font{
     font-weight: 500; 
     font-size: 15px;
 }
+  

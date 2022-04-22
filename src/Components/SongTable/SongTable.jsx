@@ -38,5 +38,4 @@ const SongTable = ({parentSongEntires, searchTerm}) => {
 
      );
 }
- 
 export default SongTable;
