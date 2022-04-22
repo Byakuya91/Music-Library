@@ -19,7 +19,6 @@ function App() {
     setSongs(tempSongs);
   }
 
-  // TODO: shift the code for the table inside this to do function.
   // intiating the API call
   useEffect(() => {
     makeGetRequest();
