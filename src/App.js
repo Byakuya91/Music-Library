@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <NavBar />
       <SearchBar handleSearch={setSearchTerm} />
-      <AddSong />
+      <AddSong addNewSong={addNewSong} />
       <SongTable parentSongEntires={songs} searchTerm={searchTerm} />
     </div>
   );

@@ -11,9 +11,28 @@ const AddSong = (props) => {
     const [genre, setGenre] = useState("");
     const [releaseDate, setReleaseDate] = useState("");
 
+//   create a handle submit function that will add the song to the SongTable.
+     function handleSubmit(formEvent){
+        //    prevents the page from being reloaded. 
+          formEvent.preventDefault();
+
+        //   TODO: figure out how to grab form data 
+         let newSongEntry = {
+             title: title,
+             album: album,
+             artist: artist,
+             genre: genre,
+             releaseDate: releaseDate
+         };
+        // TODO: Some way to set it equal to our SongTable. 
+          props.AddSong(newSongEntry);
+          alert("Your song has been added!");
+     }
+
+
     return ( 
         //  Defining the form 
-      <form>
+      <form onSubmit={handleSubmit}>
           <label >title</label>
           <input type = "text"  value={title} onChange={(event) => setTitle(event.target.value)}></input>
           <label >album</label>
@@ -24,7 +43,7 @@ const AddSong = (props) => {
           <input type = "text"   value = {genre} onChange={(event) => setGenre(event.target.value)} ></input>
           <label>releaseDate</label>
           <input type = "text"  value = {releaseDate} onChange={(event) => setReleaseDate(event.target.value)} ></input>
-          <button>Add new song</button>
+          <button type='submit'>Add new song</button>
 
       </form>
 
