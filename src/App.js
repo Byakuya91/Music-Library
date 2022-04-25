@@ -4,6 +4,7 @@ import axios from "axios";
 import SongTable from "./Components/SongTable/SongTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import NavBar from "./Components/NavBar/NavBar";
+import AddSong from "./Components/AddSong/AddSong";
 import "./Components/App.css";
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
     setSongs(tempSongs);
   }
 
+  // get the filtered search result
+  // function getSearchResult(){
+  //   // define a temp variable to hold the filteredSearch
+  //   let filteredSearch =
+  // }
   // intiating the API call
   useEffect(() => {
     makeGetRequest();
@@ -26,9 +32,7 @@ function App() {
   // retrieving API data
   async function makeGetRequest() {
     try {
-      let response = await axios.get(
-        "http://www.devcodecampmusiclibrary.com/api/music"
-      );
+      let response = await axios.get("http://localhost:5005/api/songs");
 
       // setting the data to our state variable
       setSongs(response.data);
@@ -40,6 +44,7 @@ function App() {
     <div className="App">
       <NavBar />
       <SearchBar handleSearch={setSearchTerm} />
+      <AddSong />
       <SongTable parentSongEntires={songs} searchTerm={searchTerm} />
     </div>
   );
