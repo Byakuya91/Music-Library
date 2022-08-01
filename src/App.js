@@ -15,11 +15,6 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // create a function to add the songs to the SongTable Component
-  function addNewSong(song) {
-    let tempSongs = [...songs, song];
-    setSongs(tempSongs);
-  }
-
   // get the filtered search result
   // function getSearchResult(){
   //   // define a temp variable to hold the filteredSearch
@@ -40,6 +35,19 @@ function App() {
       console.log(err.message);
     }
   }
+  async function addNewSong(song) {
+    try {
+      let response = await axios.post("http://localhost:5005/api/songs", song);
+      console.log("the response is:", response);
+
+      // setting the data to our state variable
+      setSongs(response.data);
+      makeGetRequest();
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
   return (
     <div className="App">
       <NavBar />
