@@ -1,5 +1,12 @@
 const SongTable = ({ parentSongEntires, searchTerm }) => {
-  // console.log("ParentSongEntires is:", parentSongEntires);
+  console.log(
+    "ParentSongEntires type is is:",
+    Array.isArray(parentSongEntires)
+  );
+
+  console.log("ParentSongEntires  is is:", Object.values(parentSongEntires));
+
+  let songEntiresArr = Object.values(parentSongEntires);
 
   return (
     // create our display table
@@ -14,14 +21,14 @@ const SongTable = ({ parentSongEntires, searchTerm }) => {
         </tr>
       </thead>
       <tbody className="table-font">
-        {parentSongEntires
+        {songEntiresArr
           .filter(
             (song) =>
-              song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              song.album.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              song.genre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())
+              song.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              song.album?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              song.artist?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              song.genre?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              song.releaseDate?.toLowerCase().includes(searchTerm.toLowerCase())
           )
           .map((song, index) => {
             return (
